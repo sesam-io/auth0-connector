@@ -1,0 +1,15 @@
+{
+  "additional_parameters": {
+    "audience": {},
+    "token_url": {}
+  },
+  "auth": "oauth2",
+  "datatypes": {
+    "users": {
+      "template": "templates/users.json"
+    }
+  },
+  "requires_service_api_access": true,
+  "system-template": "templates/system.json",
+  "use_webhook_secret": false
+}

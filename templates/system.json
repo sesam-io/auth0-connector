@@ -1,0 +1,26 @@
+{
+  "_id": "{{@ system @}}",
+  "oauth2": {
+    "audience": "{{@ audience @}}",
+    "client_id": "$SECRET(client_id)",
+    "client_secret": "$SECRET(client_secret)",
+    "extra": {
+      "audience": "{{@ audience @}}"
+    },
+    "grant_type": "client_credentials",
+    "token_url": "{{@ token_url @}}"
+  },
+  "operations": {
+    "users-list": {
+      "id_expression": "{{ user_id }}",
+      "method": "GET",
+      "next_page_link": "users?page={{ page + 1 }}&per_page={{ page_size }}",
+      "next_page_termination_strategy": "empty-result",
+      "page_size": 100,
+      "url": "users?page=0&per_page={{ page_size }}"
+    }
+  },
+  "type": "system:rest",
+  "url_pattern": "{{@ audience @}}%s",
+  "verify_ssl": true
+}
