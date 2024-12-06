@@ -14,10 +14,13 @@
     "users-list": {
       "id_expression": "{{ user_id }}",
       "method": "GET",
-      "next_page_link": "users?page={{ page + 1 }}&per_page={{ page_size }}",
+      "next_page_link": "users?q=updated_at:[{{ since }} TO *]&page={{ page + 1 }}&per_page={{ page_size }}",
       "next_page_termination_strategy": "empty-result",
       "page_size": 100,
-      "url": "users?page=0&per_page={{ page_size }}"
+      "since_property_location": "manual",
+      "since_property_name": "updated_at",
+      "updated_expression": "{{ updated_at }}",
+      "url": "users?q=updated_at:[{{ since }} TO *]&page=0&per_page={{ page_size }}"
     }
   },
   "type": "system:rest",
