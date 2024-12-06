@@ -1,1 +1,3 @@
-# auth0-connector
+# Auth0
+
+A Sesam connector for Auth0
